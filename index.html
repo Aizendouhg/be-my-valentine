@@ -68,31 +68,32 @@
     </div>
 
     <script>
-        function sayYes() {
-            document.getElementById("message").innerHTML = "Yay! ❤️ You made my day! I knew you would choose 'Yes'! Meet me on GMeet on February 14 at 11 PM. I LOVE YOU ALWAYS AND FOREVER! 💖💖";
-        }
+    function sayYes() {
+        document.getElementById("message").innerHTML = "Yay! ❤️ You made my day! I knew you would choose 'Yes'! Meet me on GMeet on February 14 at 11 PM. I LOVE YOU ALWAYS AND FOREVER! 💖💖";
+        document.getElementById("no").style.display = "none";  // This will hide the "No" button
+    }
 
-        function moveNo() {
-            let x = Math.random() * window.innerWidth * 0.8;
-            let y = Math.random() * window.innerHeight * 0.8;
-            document.getElementById("no").style.left = `${x}px`;
-            document.getElementById("no").style.top = `${y}px`;
-        }
+    function moveNo() {
+        let x = Math.random() * window.innerWidth * 0.8;
+        let y = Math.random() * window.innerHeight * 0.8;
+        document.getElementById("no").style.left = `${x}px`;
+        document.getElementById("no").style.top = `${y}px`;
+    }
 
-        function createHeart() {
-            let heart = document.createElement("div");
-            heart.innerHTML = "❤️";
-            heart.classList.add("heart");
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.body.appendChild(heart);
+    function createHeart() {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.body.appendChild(heart);
 
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
 
-        setInterval(createHeart, 300);
+    setInterval(createHeart, 300);
     </script>
 </body>
 </html>
